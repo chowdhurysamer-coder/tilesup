@@ -6,6 +6,9 @@ name: Fetch site images
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/fetch-images.yml"
 
 permissions:
   contents: write
