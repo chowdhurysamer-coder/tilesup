@@ -331,7 +331,8 @@ a { color: inherit; }
 .carry-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
+  align-items: end;
+  gap: 2rem 1.5rem;
   padding: 0 var(--pad);
   max-width: 78rem;
   margin: 0 auto;
