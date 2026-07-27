@@ -1,32 +1,33 @@
-// Tiles Up — small enhancements, no dependencies
+// Tiles Up — small enhancements, no dependencies.
+// Setup is idempotent and re-runs a few times after load so it also works
+// on hosts that re-render the DOM once after the first paint.
 
 (function () {
-  var header = document.querySelector('.site-header');
-  var toggle = document.getElementById('navToggle');
-  var nav = document.getElementById('siteNav');
-
   // header shadow once the page scrolls
   window.addEventListener('scroll', function () {
-    header.classList.toggle('scrolled', window.scrollY > 8);
+    var header = document.querySelector('.site-header');
+    if (header) header.classList.toggle('scrolled', window.scrollY > 8);
   }, { passive: true });
 
-  // mobile menu
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
+  // mobile menu via delegation, so it survives DOM replacement
+  document.addEventListener('click', function (e) {
+    var toggle = e.target.closest ? e.target.closest('#navToggle') : null;
+    var nav = document.getElementById('siteNav');
+    if (toggle && nav) {
       var open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    nav.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') {
-        nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
+      return;
+    }
+    if (nav && nav.classList.contains('open') && e.target.closest && e.target.closest('#siteNav a')) {
+      nav.classList.remove('open');
+      var btn = document.getElementById('navToggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 
-  // reveal sections as they enter the viewport
+  var io = null;
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
+    io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('in');
@@ -34,19 +35,29 @@
         }
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      io.observe(el);
-    });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function (el) {
-      el.classList.add('in');
-    });
   }
 
-  // keep the footer year current
-  var year = document.getElementById('year');
-  if (year) {
-    year.textContent = String(new Date().getFullYear());
+  function setup() {
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      if (el.classList.contains('in') || el.dataset.revealBound) return;
+      el.dataset.revealBound = '1';
+      if (io) {
+        io.observe(el);
+      } else {
+        el.classList.add('in');
+      }
+    });
+
+    var year = document.getElementById('year');
+    if (year) year.textContent = String(new Date().getFullYear());
   }
+
+  setup();
+  document.addEventListener('DOMContentLoaded', setup);
+  window.addEventListener('load', function () {
+    setup();
+    // one more pass after any post-load client re-render settles
+    setTimeout(setup, 1200);
+    setTimeout(setup, 3000);
+  });
 })();
