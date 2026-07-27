@@ -6,6 +6,12 @@ Website for Tiles Up, a family-run kitchen and bath showroom at
 Plain static site: no build step, no framework. Open `index.html` in a
 browser, or serve the folder with anything (`python3 -m http.server`).
 
+Live at https://tilesup.higgsfield.app — deployed from a copy of these
+files (Higgsfield website hosting serves them from its static asset
+layer). To update the live site, push changes here first, then copy
+`index.html`, `css/`, `js/` and `img/` into the hosting project's
+`app/public/` and redeploy.
+
 ## Layout
 
 - `index.html` — the whole site (single page)
