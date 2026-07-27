@@ -165,7 +165,7 @@ a { color: inherit; }
 
 /* ---------- hero ---------- */
 
-.hero { position: relative; }
+.hero-stage { position: relative; }
 
 .hero-media {
   height: min(78vh, 40rem);
@@ -182,12 +182,15 @@ a { color: inherit; }
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 4.5rem;
+  bottom: 3.5rem;
   padding: 0 var(--pad);
   color: #fff;
   max-width: 46rem;
 }
-.hero-copy .kicker { color: var(--gold-soft); }
+.hero-copy .kicker {
+  color: var(--gold-soft);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
 .hero-copy h1 {
   font-size: clamp(2.4rem, 6vw, 4.2rem);
   margin-bottom: 1rem;
@@ -522,7 +525,8 @@ a { color: inherit; }
   .nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
 
   .carry-grid, .steps, .review-grid { grid-template-columns: 1fr; }
-  .hero-copy { bottom: 3rem; }
+  .hero-copy { bottom: 2rem; }
+  .hero-media { height: min(84vh, 44rem); }
   .hero-strip { justify-content: center; text-align: center; }
   .visit-details > div { grid-template-columns: 1fr; gap: 0.2rem; }
 }
