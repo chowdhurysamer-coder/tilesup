@@ -7,7 +7,7 @@
 <meta name="description" content="Tiles Up is a family-run tile, stone and countertop showroom at 620 Walt Whitman Rd in Melville, NY. Porcelain, mosaics, natural stone, quartz counters and cabinetry for Long Island kitchens and baths.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
@@ -43,6 +43,7 @@
   <a class="wordmark" href="#top">TILES&nbsp;UP<span>kitchen &amp; bath</span></a>
   <nav class="site-nav" id="siteNav">
     <a href="#carry">What we carry</a>
+    <a href="#materials">Materials</a>
     <a href="#about">The store</a>
     <a href="#process">How it works</a>
     <a href="#reviews">Reviews</a>
@@ -57,110 +58,173 @@
 <main>
 
   <section class="hero">
-    <div class="hero-stage">
-      <figure class="hero-media">
-        <img src="img/hero-kitchen.jpg" alt="Renovated kitchen with a marble waterfall island and cream zellige backsplash" fetchpriority="high">
-      </figure>
-      <div class="hero-copy">
-      <p class="kicker">Melville, Long Island</p>
-      <h1>The tile store on Walt&nbsp;Whitman&nbsp;Road</h1>
-      <p class="lede">A small, family-run showroom for kitchens and baths. Bring photos of your space and rough measurements. Leave with real samples and a price that holds up.</p>
-      <div class="hero-actions">
-        <a class="btn btn-solid" href="#visit">Plan a visit</a>
-        <a class="btn btn-ghost" href="#carry">See what we carry</a>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="kicker"><span class="kicker-rule"></span>Melville, Long Island</p>
+        <h1>The tile store on <em>Walt Whitman Road</em></h1>
+        <p class="lede">A small, family-run showroom for kitchens and baths. Bring photos of your space and rough measurements. Leave with real samples and a price that holds up.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#visit">Plan a visit</a>
+          <a class="btn btn-ghost" href="#carry">See what we carry</a>
         </div>
+        <p class="hero-rating"><span class="stars" aria-hidden="true">★★★★★</span>&nbsp; 4.8 on Google, 57 reviews</p>
       </div>
+      <figure class="hero-photo">
+        <img src="img/hero-kitchen.jpg" alt="Renovated kitchen with a marble waterfall island and cream zellige backsplash" fetchpriority="high">
+        <figcaption>Cabinets, counters and backsplash, all from the store</figcaption>
+      </figure>
     </div>
-    <div class="hero-strip">
-      <p><strong>4.8</strong> on Google, 57 reviews</p>
-      <p>Tile · Stone · Countertops · Cabinetry</p>
-      <p>Delivery across Long Island</p>
-    </div>
+    <aside class="hero-rail" aria-hidden="true">Kitchen &amp; bath · Est. Melville</aside>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Porcelain <i>·</i> Zellige <i>·</i> Quartzite <i>·</i> Marble <i>·</i> Mosaic <i>·</i> Quartz counters <i>·</i> Cabinetry <i>·</i> Shower systems <i>·</i> Terracotta <i>·</i> Glass <i>·</i>&nbsp;</span>
+      <span>Porcelain <i>·</i> Zellige <i>·</i> Quartzite <i>·</i> Marble <i>·</i> Mosaic <i>·</i> Quartz counters <i>·</i> Cabinetry <i>·</i> Shower systems <i>·</i> Terracotta <i>·</i> Glass <i>·</i>&nbsp;</span>
+    </div>
+  </div>
 
   <section class="carry" id="carry">
-    <div class="section-head">
+    <header class="sec-head">
+      <span class="sec-num">01</span>
       <h2>What we carry</h2>
-      <p>The showroom is small but the range isn't. Most of what's on the boards can be in your driveway within the week; the rest we special order.</p>
-    </div>
+      <p class="sec-sub">The showroom is small but the range isn't. Most of what's on the boards can be in your driveway within the week; the rest we special order.</p>
+    </header>
     <div class="carry-grid">
-      <a class="card reveal" href="#visit">
+      <a class="card card-a reveal" href="#visit">
         <figure><img src="img/cat-porcelain.jpg" alt="Large-format greige porcelain floor tile in raking sunlight" loading="lazy"></figure>
-        <h3>Porcelain &amp; ceramic</h3>
-        <p>Large format, wood look, classic subway. Floors and walls, in stock and special order.</p>
+        <div class="card-meta">
+          <span class="card-idx">01</span>
+          <h3>Porcelain &amp; ceramic</h3>
+          <p>Large format, wood look, classic subway. Floors and walls, in stock and special order.</p>
+        </div>
       </a>
-      <a class="card reveal" href="#visit">
+      <a class="card card-b reveal" href="#visit">
         <figure><img src="img/cat-mosaic.jpg" alt="Hand-glazed green ceramic mosaic backsplash under warm cabinet lighting" loading="lazy"></figure>
-        <h3>Mosaics &amp; backsplash</h3>
-        <p>Glass, marble hex, zellige and hand-glazed pieces for backsplashes and shower floors.</p>
+        <div class="card-meta">
+          <span class="card-idx">02</span>
+          <h3>Mosaics &amp; backsplash</h3>
+          <p>Glass, marble hex, zellige and hand-glazed pieces for backsplashes and shower floors.</p>
+        </div>
       </a>
-      <a class="card reveal" href="#visit">
+      <a class="card card-c reveal" href="#visit">
         <figure><img src="img/cat-stone.jpg" alt="Marble and quartzite slabs standing in warehouse racks" loading="lazy"></figure>
-        <h3>Natural stone</h3>
-        <p>Marble, quartzite and granite. We'll walk the racks with you and tag the slab you pick.</p>
+        <div class="card-meta">
+          <span class="card-idx">03</span>
+          <h3>Natural stone</h3>
+          <p>Marble, quartzite and granite. We'll walk the racks with you and tag the slab you pick.</p>
+        </div>
       </a>
-      <a class="card reveal" href="#visit">
+      <a class="card card-d reveal" href="#visit">
         <figure><img src="img/cat-countertop.jpg" alt="Honed white quartz countertop meeting a white oak cabinet" loading="lazy"></figure>
-        <h3>Countertops</h3>
-        <p>Quartz and stone counters, templated and cut to your kitchen. Sinks and faucets too.</p>
+        <div class="card-meta">
+          <span class="card-idx">04</span>
+          <h3>Countertops</h3>
+          <p>Quartz and stone counters, templated and cut to your kitchen. Sinks and faucets too.</p>
+        </div>
       </a>
-      <a class="card reveal" href="#visit">
+      <a class="card card-e reveal" href="#visit">
         <figure><img src="img/cat-cabinets.jpg" alt="Sage green inset kitchen cabinets with brass knobs" loading="lazy"></figure>
-        <h3>Cabinetry</h3>
-        <p>Kitchen and vanity cabinets in standard and custom sizes, with drawings before you order.</p>
+        <div class="card-meta">
+          <span class="card-idx">05</span>
+          <h3>Cabinetry</h3>
+          <p>Kitchen and vanity cabinets in standard and custom sizes, with drawings before you order.</p>
+        </div>
       </a>
-      <a class="card reveal" href="#visit">
+      <a class="card card-f reveal" href="#visit">
         <figure><img src="img/cat-bath.jpg" alt="Walk-in shower with stacked white tile and a marble hex floor" loading="lazy"></figure>
-        <h3>Shower &amp; bath</h3>
-        <p>Vanities, shower doors, niches, trim pieces. The parts nobody thinks about until the plumber asks.</p>
+        <div class="card-meta">
+          <span class="card-idx">06</span>
+          <h3>Shower &amp; bath</h3>
+          <p>Vanities, shower doors, niches, trim pieces. The parts nobody thinks about until the plumber asks.</p>
+        </div>
       </a>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <figure class="about-media reveal">
-      <img src="img/showroom.jpg" alt="Inside the Tiles Up showroom, walls lined with tile sample boards" loading="lazy">
-    </figure>
-    <div class="about-copy">
-      <p class="kicker">The store</p>
-      <h2>Run by two people who will actually sit with you</h2>
-      <p>Tiles Up is owned by Rasha and Kamal, a husband and wife team. It's the kind of store where the person helping you pick a backsplash is the same person who prices it and answers the phone when your contractor has a question.</p>
-      <p>Rasha handles most of the design work. She'll pull boards, sketch the layout, and send you home with sample boards to hold against your counters in your own light. Kamal keeps the orders and deliveries honest. When a contractor miscounted mid-job, they've been known to drive the extra box over themselves.</p>
-      <p>Interior designers on Long Island send their clients here. So do neighbors who wandered in off Route 110. Both get the same treatment.</p>
-      <a class="text-link" href="#reviews">Read what customers say</a>
+  <section class="materials" id="materials">
+    <header class="sec-head">
+      <span class="sec-num">02</span>
+      <h2>Materials, up close</h2>
+      <p class="sec-sub">Photos flatten everything. These come closest, but the glaze, the veining and the weight only make sense in your hands. Ask for the boards.</p>
+    </header>
+    <div class="mat-scroll" tabindex="0">
+      <figure class="mat-card reveal">
+        <img src="img/mat-zellige.jpg" alt="Macro detail of deep green handmade zellige glaze" loading="lazy">
+        <figcaption><strong>Zellige</strong><span>Hand-cut, glazed clay. No two pieces match, which is the point.</span></figcaption>
+      </figure>
+      <figure class="mat-card reveal">
+        <img src="img/mat-marble.jpg" alt="Macro detail of Calacatta Viola marble veining" loading="lazy">
+        <figcaption><strong>Calacatta Viola</strong><span>Burgundy veining on a warm white ground. Loud, in a good way.</span></figcaption>
+      </figure>
+      <figure class="mat-card reveal">
+        <img src="img/mat-terracotta.jpg" alt="Stack of handmade terracotta floor tiles in warm light" loading="lazy">
+        <figcaption><strong>Terracotta</strong><span>Chalky, warm, a little chipped at the edges. Gets better with years.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="store" id="about">
+    <header class="sec-head">
+      <span class="sec-num">03</span>
+      <h2>The store</h2>
+    </header>
+    <div class="store-grid">
+      <div class="store-photo-wrap reveal">
+        <figure class="store-photo">
+          <img src="img/showroom.jpg" alt="Inside the Tiles Up showroom, walls lined with tile sample boards" loading="lazy">
+        </figure>
+        <blockquote class="store-pull">
+          <p>&ldquo;They have become friends more than just a store.&rdquo;</p>
+          <cite>Mike P., Google review</cite>
+        </blockquote>
+      </div>
+      <div class="store-copy">
+        <h3>Run by two people who will actually sit with&nbsp;you</h3>
+        <p>Tiles Up is owned by Rasha and Kamal, a husband and wife team. It's the kind of store where the person helping you pick a backsplash is the same person who prices it and answers the phone when your contractor has a question.</p>
+        <p>Rasha handles most of the design work. She'll pull boards, sketch the layout, and send you home with sample boards to hold against your counters in your own light. Kamal keeps the orders and deliveries honest. When a contractor miscounted mid-job, they've been known to drive the extra box over themselves.</p>
+        <p>Interior designers on Long Island send their clients here. So do neighbors who wandered in off Route 110. Both get the same treatment.</p>
+        <a class="text-link" href="#reviews">Read what customers say</a>
+      </div>
     </div>
   </section>
 
   <section class="banner reveal">
     <img src="img/banner-bath.jpg" alt="Primary bathroom with deep green porcelain slab walls and a freestanding tub" loading="lazy">
     <blockquote>
-      <p>&ldquo;My outdated, tired kitchen is now the kitchen of my dreams.&rdquo;</p>
-      <cite>Dom C., Google review</cite>
+      <span class="banner-mark" aria-hidden="true">&ldquo;</span>
+      <p>My outdated, tired kitchen is now the kitchen of my dreams.</p>
+      <cite>Dom C. &mdash; Google review</cite>
     </blockquote>
   </section>
 
   <section class="process" id="process">
-    <div class="section-head">
+    <header class="sec-head">
+      <span class="sec-num">04</span>
       <h2>How a project usually goes</h2>
-      <p>No appointment needed, though calling ahead never hurts.</p>
-    </div>
+      <p class="sec-sub">No appointment needed, though calling ahead never hurts.</p>
+    </header>
     <ol class="steps">
       <li class="reveal">
+        <span class="step-node" aria-hidden="true"></span>
         <span class="step-num">1</span>
         <h3>Bring what you have</h3>
         <p>Photos on your phone, rough measurements, a countertop chip, a Pinterest board. Any of it helps.</p>
       </li>
       <li class="reveal">
+        <span class="step-node" aria-hidden="true"></span>
         <span class="step-num">2</span>
-        <h3>Sit down and pull samples</h3>
+        <h3>Sit down, pull samples</h3>
         <p>Rasha will lay options on the desk and talk through layout. Take sample boards home to check them in your light.</p>
       </li>
       <li class="reveal">
+        <span class="step-node" aria-hidden="true"></span>
         <span class="step-num">3</span>
         <h3>Get a straight price</h3>
         <p>Have a quote from another store? Bring it. Matching or beating it is a point of pride here.</p>
       </li>
       <li class="reveal">
+        <span class="step-node" aria-hidden="true"></span>
         <span class="step-num">4</span>
         <h3>Delivered to your door</h3>
         <p>Orders arrive wrapped and counted. If your installer runs short mid-job, call us and we'll sort it out.</p>
@@ -169,18 +233,19 @@
   </section>
 
   <section class="reviews" id="reviews">
-    <div class="section-head">
+    <header class="sec-head sec-head-dark">
+      <span class="sec-num">05</span>
       <h2>From our Google reviews</h2>
-      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> 4.8 average across 57 reviews</p>
-    </div>
-    <div class="review-grid">
+      <p class="sec-sub"><span class="stars" aria-hidden="true">★★★★★</span>&nbsp; 4.8 average across 57 reviews</p>
+    </header>
+    <blockquote class="review-feature reveal">
+      <p>&ldquo;She came in <em>$15&ndash;$21 cheaper per square foot</em> than any other tile store I had gone to, for the exact same tile.&rdquo;</p>
+      <cite>Giovanni T.</cite>
+    </blockquote>
+    <div class="review-list">
       <blockquote class="review reveal">
         <p>&ldquo;I am an interior designer, and I have been going to Tiles Up for years with my clients. Tiles Up prices are unbeatable compared to other tile stores on Long Island.&rdquo;</p>
         <cite>Margaret, interior designer</cite>
-      </blockquote>
-      <blockquote class="review reveal">
-        <p>&ldquo;She came in $15&ndash;$21 cheaper per square foot than any other tile store I had gone to for the exact same tile. Everything was delivered right to my door.&rdquo;</p>
-        <cite>Giovanni T.</cite>
       </blockquote>
       <blockquote class="review reveal">
         <p>&ldquo;My contractor ran out of tile in the middle of the job. The owners went out of their way and made a special trip to get me the extra box and trim pieces.&rdquo;</p>
@@ -194,17 +259,13 @@
         <p>&ldquo;The husband and wife team are professional and caring. They are honest and have a discerning eye. Thank you for helping me create my dream home.&rdquo;</p>
         <cite>Margo W.</cite>
       </blockquote>
-      <blockquote class="review reveal">
-        <p>&ldquo;Their attention to customer service can not be beat. We highly recommend using them for a stress-free and very positive experience.&rdquo;</p>
-        <cite>Meryl S.</cite>
-      </blockquote>
     </div>
   </section>
 
   <section class="visit" id="visit">
     <div class="visit-info">
-      <p class="kicker">Visit the showroom</p>
-      <h2>620 Walt Whitman Road</h2>
+      <p class="kicker"><span class="kicker-rule"></span>Visit the showroom</p>
+      <h2>620 Walt Whitman&nbsp;Road</h2>
       <p class="visit-sub">Melville, NY 11747 &mdash; right on Route 110.</p>
       <dl class="visit-details">
         <div>
@@ -234,15 +295,17 @@
 </main>
 
 <footer class="site-footer">
+  <p class="footer-mark" aria-hidden="true">TILES&nbsp;UP</p>
   <div class="footer-main">
-    <a class="wordmark wordmark-footer" href="#top">TILES&nbsp;UP<span>kitchen &amp; bath</span></a>
-    <p>620 Walt Whitman Rd, Melville, NY 11747<br><a href="tel:+15169432356">(516) 943-2356</a></p>
+    <p>620 Walt Whitman Rd<br>Melville, NY 11747<br><a href="tel:+15169432356">(516) 943-2356</a></p>
     <nav class="footer-nav">
       <a href="#carry">What we carry</a>
+      <a href="#materials">Materials</a>
       <a href="#about">The store</a>
       <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
     </nav>
+    <p class="footer-note">Closed Mondays.<br>Doors open 10:30 AM.</p>
   </div>
   <p class="footer-fine">&copy; <span id="year">2026</span> Tiles Up. Family owned and operated in Melville, New York.</p>
 </footer>

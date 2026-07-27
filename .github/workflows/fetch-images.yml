@@ -39,6 +39,9 @@ jobs:
           cat-bath|hf_20260727_221348_2ef93aec-d6a0-412f-b042-b366c7683784.png|900
           cat-countertop|hf_20260727_221350_0eb66548-9efc-48c7-9065-1910611ea719.png|900
           cat-cabinets|hf_20260727_221357_a5950d02-92a3-49ca-9573-e1b1df5c67ce.png|900
+          mat-zellige|hf_20260727_223210_3347af49-ac7d-4023-b219-68c83ab0a68e.png|760
+          mat-marble|hf_20260727_223212_d66d14e8-b81c-4bc6-8c23-de9cbfc8fc7f.png|760
+          mat-terracotta|hf_20260727_223213_e8bc40f8-2a98-4acd-a891-60280f45f634.png|760
           '
 
           echo "$list" | while IFS='|' read -r name src width; do
