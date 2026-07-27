@@ -1,0 +1,55 @@
+name: Fetch site images
+
+# One-shot helper: downloads the site photography from its CDN source,
+# resizes it for the web, and commits the optimized JPEGs to img/.
+# Run manually from the Actions tab whenever the source list changes.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and optimize
+        run: |
+          set -euo pipefail
+          base="https://d8j0ntlcm91z4.cloudfront.net/user_3GYBS62dxIIG18Q4M3dG53faoa7"
+          mkdir -p img /tmp/src
+
+          # name|source file|target width
+          list='
+          hero-kitchen|hf_20260727_221330_dcf08598-a0f5-4d41-afb2-689214fa5e2a.png|1920
+          banner-bath|hf_20260727_221355_88fc8fcf-7044-4ca2-ba69-278ba4c7b3e8.png|1920
+          showroom|hf_20260727_221353_ccabca9a-fed5-4082-8c05-41b5bba6c4ee.png|1264
+          cat-porcelain|hf_20260727_221332_f09a49f2-b8a4-4dd9-aa21-3367e42f382d.png|900
+          cat-mosaic|hf_20260727_221335_d831a10c-cbbc-4ed4-b7de-32ad4a3cace6.png|900
+          cat-stone|hf_20260727_221336_cc7dbe31-4d70-4a15-8935-bfea931ba098.png|900
+          cat-bath|hf_20260727_221348_2ef93aec-d6a0-412f-b042-b366c7683784.png|900
+          cat-countertop|hf_20260727_221350_0eb66548-9efc-48c7-9065-1910611ea719.png|900
+          cat-cabinets|hf_20260727_221357_a5950d02-92a3-49ca-9573-e1b1df5c67ce.png|900
+          '
+
+          echo "$list" | while IFS='|' read -r name src width; do
+            [ -z "$name" ] && continue
+            name=$(echo "$name" | xargs)
+            echo "-> $name ($width px)"
+            curl -fsSL --retry 3 -o "/tmp/src/$name.png" "$base/$src"
+            convert "/tmp/src/$name.png" -resize "${width}x>" -strip -interlace Plane -quality 82 "img/$name.jpg"
+          done
+
+          ls -la img/
+
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img/*.jpg
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Add optimized site photography"
+          git push
